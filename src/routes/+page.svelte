@@ -6,7 +6,7 @@
     export let data;
     console.log(data)
 </script>
-{Object.keys(data)}
+{data}{JSON.stringify(data)}
 <div class="fixed bottom-0 lg:relative w-full bg-neutral-100 p-1">
     <div class="container flex m-auto items-center">
             <select class="bg-transparent">
