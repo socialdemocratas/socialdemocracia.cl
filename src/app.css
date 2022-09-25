@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Vibur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Vibur&family=Prompt:wght@700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,4 +6,9 @@
 
 .font-vibur {
     font-family: 'Vibur', cursive;
+}
+
+.font-prompt {
+    font-family: 'Prompt', sans-serif;
+    font-weight: 700;
 }

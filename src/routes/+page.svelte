@@ -1,12 +1,13 @@
 <script>
     import SDSpeciment233Image from '$lib/assets/specimen233.png';
+    import Logo from '$lib/assets/logo-100px.png';
+    import FutureImg from '$lib/assets/future.jpg'
 
     let articulos = [0,1,2,3,4,5,6];
 
-    export let data;
-    console.log(data)
+    /** @type {import('./$types').PageData} */
+    export let data = [];
 </script>
-{data}{JSON.stringify(data)}
 <div class="fixed bottom-0 lg:relative w-full bg-neutral-100 p-1">
     <div class="container flex m-auto items-center">
             <select class="bg-transparent">
@@ -25,21 +26,30 @@
     </div>
 </div>
 
+<a href="/"><img src={'https://dbdzm869oupei.cloudfront.net/img/sticker/preview/13916.png'} 
+    class="w-14 -h-12 fixed -absolute top-[-55px] left-[-10px] z-0"
+    alt="Copihues decorativos" /></a>
+
 <div class="h-24 flex items-center w-full relative">
-    <img src={SDSpeciment233Image} 
-    class="w-20 h-20 absolute left-[-20px] top-[-10px]"
-    alt="Logo, una mano sosteniendo un copihue rojo" />
+    
     <div class="flex flex-col flex-1 text-center">
-        <h1 class="text-3xl font-medium font-vibur">Socialdemocracia</h1>
-        <small>Revista política chilena</small>
+        <h1 class="text-2xl font-prompt">Socialdemocracia</h1>
+        <small>chilena</small>
     </div>
 </div>
 
-<div class="container p-3 m-auto">
-    {#each articulos as article}
-    <article class="pb-10 mb-10 border-b border-b-black border-b-2">
-        <h1 class="text-3xl font-medium font-serif leading-normal">TPP-11. Razones para decidir</h1>
-        <p class="text-base leading-snug">Hace algunas semanas, el senador Felipe Harboe se imaginaba una eventual amplia coalición que podría conformarse en la oposición y que incluyera liberales, progresistas y socialistas. Incluso mencionó insignes figuras del mundo social cristiano y el autonomismo de izquierda como eventuales integrantes de esta coalición (Gabriel Boric y Soledad Alvear). Además, el senador especificaba que el punto de encuentro de toda es amplia diversidad era el “paragua socialdemócrata”.</p>
+<div class="">
+    {#each data.articles as article}
+    <article class="pb-5 mb-5 border-b -border-b-black border-b-1 flex flex-row items-center container pl-6 px-3 m-auto z-10">
+        <a href="/{article.id}" class="flex-1">
+            <span>{article.section}</span>
+            <h1 class="text-2xl font-bold font-serif leading-normal">{article.title}</h1>
+            <span class="text-gray-600">{article.author}</span>
+            <!--<p class="text-sm leading-snug">{article.lead}</p>-->
+        </a>
+        <a href="/{article.id}" class="block w-20 h-20 bg-cover bg-center mr-[-15px]" 
+        style="background-image: url({article.pic});">
+        </a>
     </article>
     {/each}
 
